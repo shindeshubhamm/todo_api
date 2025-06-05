@@ -44,6 +44,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Safe database migrations [https://github.com/ankane/strong_migrations]
+  gem "strong_migrations"
 end
 
 # PostgreSQL
