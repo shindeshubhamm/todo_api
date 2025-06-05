@@ -18,3 +18,6 @@ db-migrate:
 
 dev:
 	./bin/rails server
+
+lint:
+	./bin/bundle exec rubocop -A
