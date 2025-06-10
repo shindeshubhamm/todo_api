@@ -49,3 +49,5 @@ end
 
 # PostgreSQL
 gem "pg"
+
+gem "graphql", "~> 2.5"
