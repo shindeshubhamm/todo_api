@@ -2,7 +2,7 @@
 
 module Resolvers
   class TodoResolver < GraphQL::Schema::Resolver
-    type [Types::TodoType], null: false
+    type [ Types::TodoType ], null: false
 
     argument :status, String, required: false
     argument :search, String, required: false
@@ -27,4 +27,4 @@ module Resolvers
       todos.offset((page - 1) * per_page).limit(per_page)
     end
   end
-end 
+end
