@@ -37,11 +37,5 @@ module TodoApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-
-    # Add GraphQL directories to autoload paths
-    config.autoload_paths << Rails.root.join("app/graphql")
-    config.autoload_paths << Rails.root.join("app/graphql/mutations")
-    config.autoload_paths << Rails.root.join("app/graphql/queries")
-    config.autoload_paths << Rails.root.join("app/graphql/types")
   end
 end
