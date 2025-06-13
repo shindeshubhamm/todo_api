@@ -14,6 +14,7 @@ module Mutations
         todo = ::Todo.new(title: title, description: description, status: status)
 
         if todo.save
+          Rails.cache.delete("all_todos")
           {
             todo: todo,
             errors: []
@@ -41,6 +42,8 @@ module Mutations
         return { todo: nil, errors: [ "Todo not found" ] } unless todo
 
         if todo.update(attributes)
+          Rails.cache.delete("all_todos")
+          Rails.cache.delete("todo_#{id}")
           {
             todo: todo,
             errors: []
@@ -65,6 +68,8 @@ module Mutations
         return { success: false, errors: [ "Todo not found" ] } unless todo
 
         if todo.destroy
+          Rails.cache.delete("all_todos")
+          Rails.cache.delete("todo_#{id}")
           {
             success: true,
             errors: []

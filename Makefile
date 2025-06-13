@@ -1,4 +1,4 @@
-.PHONY: setup db db-migrate dev
+.PHONY: setup db db-migrate dev redis lint
 
 setup:
 	./bin/bundle install
@@ -15,6 +15,14 @@ db:
 
 db-migrate:
 	./bin/rails db:migrate
+
+redis:
+	mkdir -p ./storage/redis
+	docker run -it --rm -d \
+		--name redis \
+		-p 6379:6379 \
+		-v ./storage/redis:/data \
+		redis:7-alpine redis-server --appendonly yes
 
 dev:
 	./bin/rails server

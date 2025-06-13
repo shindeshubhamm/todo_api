@@ -51,3 +51,7 @@ end
 gem "pg"
 
 gem "graphql", "~> 2.5"
+
+# Redis for caching
+gem "redis", "~> 5.0"
+gem "hiredis-client", "~> 0.11.0"
