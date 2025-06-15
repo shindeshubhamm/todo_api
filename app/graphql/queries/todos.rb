@@ -7,7 +7,7 @@ module Queries
       cached_todos = Rails.cache.read("all_todos")
 
       if cached_todos.nil? # cache miss
-        todos = ::Todo.all
+        todos = ::Todo.order(:created_at)
         Rails.cache.write("all_todos", todos, expires_in: 1.hour)
         todos
       else # cache hit

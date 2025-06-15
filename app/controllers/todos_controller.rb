@@ -3,26 +3,26 @@ class TodosController < ApplicationController
 
   def index
     cached_todos = Rails.cache.read("rest_todos")
-    
+
     if cached_todos.nil? # cache miss
       @todos = Todo.all
       Rails.cache.write("rest_todos", @todos, expires_in: 1.hour)
     else # cache hit
       @todos = cached_todos
     end
-    
+
     render json: @todos
   end
 
   def show
     cached_todo = Rails.cache.read("rest_todo_#{@todo.id}")
-    
+
     if cached_todo.nil? # cache miss
       Rails.cache.write("rest_todo_#{@todo.id}", @todo, expires_in: 1.hour)
     else # cache hit
       @todo = cached_todo
     end
-    
+
     render json: @todo
   end
 
@@ -50,10 +50,10 @@ class TodosController < ApplicationController
   def destroy
     todo_id = @todo.id
     @todo.destroy
-    
+
     Rails.cache.delete("rest_todos")
     Rails.cache.delete("rest_todo_#{todo_id}")
-    
+
     head :no_content
   end
 

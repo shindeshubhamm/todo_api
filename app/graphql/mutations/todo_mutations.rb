@@ -5,12 +5,13 @@ module Mutations
     class CreateTodo < Mutations::BaseMutation
       argument :title, String, required: true
       argument :description, String, required: false
-      argument :status, String, required: true
+      argument :status, String, required: false
 
       field :todo, Types::TodoType, null: true
       field :errors, [ String ], null: false
 
-      def resolve(title:, description: nil, status:)
+      def resolve(title:, description: nil, status: nil)
+        status ||= "pending"
         todo = ::Todo.new(title: title, description: description, status: status)
 
         if todo.save
