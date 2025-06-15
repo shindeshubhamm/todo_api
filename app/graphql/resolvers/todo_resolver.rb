@@ -21,7 +21,8 @@ module Resolvers
       todos = todos.where("title ILIKE ?", "%#{search}%") if search.present?
 
       # sorting
-      todos = todos.order(sort_by => sort_direction)
+      direction = sort_direction.downcase == "asc" ? :asc : :desc
+      todos = todos.order(sort_by => direction)
 
       # pagination
       todos.offset((page - 1) * per_page).limit(per_page)
