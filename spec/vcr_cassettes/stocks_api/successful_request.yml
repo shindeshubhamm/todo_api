@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.freeapi.app/api/v1/public/stocks?limit=2&page=1
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.freeapi.app
+      User-Agent:
+      - http.rb/5.3.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Date:
+      - Sun, 15 Jun 2025 10:24:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '819'
+      Connection:
+      - close
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Ratelimit-Limit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4999'
+      Ratelimit-Reset:
+      - '326'
+      Etag:
+      - W/"333-Yl1eQMON0dDfTQxwubrwOQpTbl4"
+      Set-Cookie:
+      - connect.sid=s%3AuHLPBWV4vkALaoOdLisikN3y0SZYGm7T.%2Fq22CM2%2F4htaaUtkJKCb6hkGUbAroC3FBS41ukzZuKw;
+        Path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"statusCode":200,"data":{"page":1,"limit":2,"totalPages":953,"previousPage":false,"nextPage":true,"totalItems":1906,"currentPageItems":2,"data":[{"Name":"20
+        Microns Limited","Symbol":"20MICRONS","ListingDate":"06-Oct-08","ISIN":"INE144J01027","MarketCap":"₹
+        621 Cr.","CurrentPrice":"₹ 176","HighLow":"₹ 201 / 62.8","StockPE":"12.8","BookValue":"₹
+        91.1","DividendYield":"0.42 %","ROCE":"19.3 %","ROE":"15.3 %","FaceValue":"₹
+        5.00"},{"Name":"21st Century Management Services Limited","Symbol":"21STCENMGM","ListingDate":"03-May-95","ISIN":"INE253B01015","MarketCap":"₹
+        34.4 Cr.","CurrentPrice":"₹ 32.8","HighLow":"₹ 33.5 / 16.5","StockPE":"","BookValue":"₹
+        26.4","DividendYield":"0.00 %","ROCE":"-57.7 %","ROE":"-70.6 %","FaceValue":"₹
+        10.0"}]},"message":"Stocks fetched successfully","success":true}'
+  recorded_at: Sun, 15 Jun 2025 10:24:55 GMT
+recorded_with: VCR 6.3.1

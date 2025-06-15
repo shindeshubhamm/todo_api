@@ -1,4 +1,4 @@
-.PHONY: setup db db-migrate dev redis lint
+.PHONY: setup db db-migrate dev redis lint test
 
 setup:
 	./bin/bundle install
@@ -29,3 +29,6 @@ dev:
 
 lint:
 	./bin/bundle exec rubocop -A
+
+test:
+	./bin/bundle exec rspec

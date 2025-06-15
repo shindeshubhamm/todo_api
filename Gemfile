@@ -33,6 +33,9 @@ gem "thruster", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors"
 
+# HTTP client for API requests
+gem "http"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -45,6 +48,11 @@ group :development, :test do
 
   # Safe database migrations [https://github.com/ankane/strong_migrations]
   gem "strong_migrations"
+
+  # Testing
+  gem "rspec-rails"
+  gem "vcr"
+  gem "webmock"
 end
 
 # PostgreSQL
