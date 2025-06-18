@@ -130,8 +130,8 @@ GEM
       fiber-storage
       logger
     hashdiff (1.2.0)
-    hiredis-client (0.11.2)
-      redis-client (= 0.11.2)
+    hiredis-client (0.25.0)
+      redis-client (= 0.25.0)
     http (5.3.1)
       addressable (~> 2.8)
       http-cookie (~> 1.0)
@@ -269,7 +269,7 @@ GEM
       psych (>= 4.0.0)
     redis (5.0.7)
       redis-client (>= 0.9.0)
-    redis-client (0.11.2)
+    redis-client (0.25.0)
       connection_pool
     regexp_parser (2.10.0)
     reline (0.6.1)
@@ -389,7 +389,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   graphql (~> 2.5)
-  hiredis-client (~> 0.11.0)
+  hiredis-client (~> 0.25.0)
   http
   kamal
   pg
